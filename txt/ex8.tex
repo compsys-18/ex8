@@ -1,0 +1,55 @@
+\documentclass{jarticle}
+\usepackage{amsmath}
+\usepackage{listings}
+\lstset{
+  basicstyle = {\ttfamily},
+  frame = {tb}
+}
+
+\title{計算機システム演習　第８回レポート}
+\author{17B13541 \and 細木隆豊}
+\date{}
+
+\begin{document}
+  \maketitle
+  \section{実行結果}
+    \begin{lstlisting}
+      $t0 = 400
+      $t0 = fffffe00
+      $t0 = 100
+      $t0 = 300
+      $t0 = 1
+    \end{lstlisting}
+    \$t1 = 0x100(256)\{...0100000000\}, \$t2 = 0x300(768)\{...1100000000\}であるので、 \\
+    1行目...add \$t0, \$t1, \$t2 =$>$ 0x400(1024) \\
+    2行目...sub \$t0, \$t1, \$t2 =$>$ 0xfffffe00(-512) \\
+    3行目...and \$t0, \$t1, \$t2 =$>$ 0x100\{...0100000000\} \\
+    4行目...or  \$t0, \$t1, \$t2 =$>$ 0x300\{...1100000000\} \\
+    5行目...slt \$t0, \$t1, \$t2 =$>$ 1 \\
+
+  \section{感想等}
+    第５回からずっと作ってきたunitを組み合わせてMIPSシミュレータを作ったが、それぞれのunitの役割や使い方を確認しながら配線を繋いでいくのはそれほど難しくはなかった。ただ最初から自分で作るとなると、必要になるunitの役割や繋ぎ方、引数を一から考え、実装していかなければならないので、最後の課題までやってMIPSシミュレータの複雑さがわかった。
+
+    時間があるときにver3,ver4も実装できたらと思う。
+
+  \section{アンケート}
+    \subsection{演習課題のプログラム作成をどこで行ったか}
+    1.演習室
+
+    \subsection{演習課題のプログラム作成環境について}
+      \subsubsection{OS}
+      2.MacOS系
+      \subsubsection{エディタ}
+      Atom
+      \subsubsection{コンパイル等の環境}
+      ターミナル
+
+    \subsection{演習課題について}
+      \subsubsection{難易度}
+      3
+      \subsubsection{分量}
+      3
+
+    \subsection{授業全体の感想や要望}
+    演習が週二回あったときは課題の提出期限が短いのではないかと感んじました。
+\end{document}
